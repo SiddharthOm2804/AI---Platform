@@ -1,0 +1,16 @@
+{
+  "name": "placement-prep-platform",
+  "version": "1.0.0",
+  "description": "AI-Powered Placement Prep Platform (MERN + Own AI)",
+  "scripts": {
+    "train:data": "cd ml-training && python data/synthetic_generator.py",
+    "train:ats": "cd ml-training && python train_ats_model.py",
+    "train:answers": "cd ml-training && python train_answer_scorer.py",
+    "train:roles": "cd ml-training && python train_role_classifier.py",
+    "train:all": "npm run train:data && npm run train:ats && npm run train:answers && npm run train:roles",
+    "train:evaluate": "cd ml-training && python evaluate.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

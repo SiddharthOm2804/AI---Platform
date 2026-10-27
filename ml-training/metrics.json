@@ -1,0 +1,50 @@
+{
+  "ats_model": {
+    "trained_at": "2026-09-23T18:54:53.046782+00:00",
+    "rows": 800,
+    "features": 9,
+    "mae": 2.9299,
+    "r2": 0.8452,
+    "output_path": "server/src/models/onnx/ats_model.onnx"
+  },
+  "role_classifier": {
+    "trained_at": "2026-09-23T18:55:35.047858+00:00",
+    "rows": 800,
+    "classes": [
+      "Backend",
+      "Data",
+      "DevOps",
+      "Frontend",
+      "ML",
+      "SDE"
+    ],
+    "accuracy": 0.7688,
+    "output_path": "server/src/models/onnx/role_classifier.onnx"
+  },
+  "answer_scorer": {
+    "trained_at": "2026-09-23T18:56:03.266700+00:00",
+    "rows": 400,
+    "epochs": 2,
+    "final_loss": 0.08,
+    "output_path": "server/src/models/onnx/answer_scorer"
+  },
+  "evaluation": {
+    "evaluated_at": "2026-09-23T18:56:20.627239+00:00",
+    "results": [
+      {
+        "Model": "ATS Score Regressor",
+        "File": "ats_model.onnx",
+        "Samples": 100,
+        "Metric": "MAE",
+        "Score": "2.868 points"
+      },
+      {
+        "Model": "Role Classifier",
+        "File": "role_classifier.onnx",
+        "Samples": 100,
+        "Metric": "Accuracy",
+        "Score": "85.00%"
+      }
+    ]
+  }
+}
